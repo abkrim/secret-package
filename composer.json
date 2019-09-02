@@ -1,0 +1,54 @@
+{
+    "name": "abkrim/secret-package",
+    "description": "A test package for course phppackagedevelopment.com of BeyondCode",
+    "keywords": [
+        "abkrim",
+        "secret-package"
+    ],
+    "homepage": "https://github.com/abkrim/secret-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "AbdelKarim Mateos",
+            "email": "abdelkarim.mateos@castris.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abkrim\\SecretPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abkrim\\SecretPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Abkrim\\SecretPackage\\SecretPackageServiceProvider"
+            ],
+            "aliases": {
+                "SecretPackage": "Abkrim\\SecretPackage\\SecretPackageFacade"
+            }
+        }
+    }
+}
